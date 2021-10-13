@@ -19,15 +19,10 @@ class SinglyLinkedList:
 
     def insert_at_beginning(self, data):  # O(1) - preferred insertion
         node = Node(data)  # create a node
-        if self.head is None:  # if list is initially empty
-            # mark the beginning node as head node
-            self.head = node
-            self.size += 1  # one element added
-        else:
-            # adding another node (list is not empty)
-            node.next = self.head  # connect new node forward to head node
-            self.head = node  # change name of new node to head node
-            self.size += 1
+        
+        node.next = self.head
+        self.head = node
+        self.size += 1
 
     def insert_at_end(self, data):  # O(n)
         node = Node(data)
